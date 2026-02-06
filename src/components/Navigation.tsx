@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Navigation() {
@@ -26,12 +27,21 @@ export default function Navigation() {
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
+          <Image
+            src="/images/tsc-logo.svg"
+            alt="더작은교회 로고"
+            width={28}
+            height={34}
+            className={`transition-all duration-300 ${
+              isScrolled ? "invert-0" : "invert"
+            }`}
+          />
           <span
-            className={`text-xl font-bold tracking-tight transition-colors duration-300 ${
+            className={`text-lg font-bold tracking-tight transition-colors duration-300 ${
               isScrolled ? "text-gray-900" : "text-white"
             }`}
           >
-            ✝ 더작은교회
+            더작은교회
           </span>
         </Link>
 
